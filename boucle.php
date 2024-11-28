@@ -15,28 +15,45 @@
         }
         echo "\n";
     }*/
-
+// foreach($notes as $addNotes){
+//     $addNotes = (int)readline("Ajouter une note : ");
+//     print_r($addNotes);
+// }
 /*
     Demande à l'utilisateur de rentrer une note ou de taper "fin"
     chaque note est sauvegardée dans un tableau $notes (pensez $notes[])
     à la fin on affiche un tableau sous forme de liste 
 */ 
 
+// TANT QUE L'UTILISATEUR NE TAPE PAS FIN
+// Ajouter une note tapée au tableau au tableau note
+// Pour chaque note dans notes
+// On affiche "- note"
 
-// foreach($notes as $addNotes){
-//     $addNotes = (int)readline("Ajouter une note : ");
-//     print_r($addNotes);
-// }
+$notes = [];
 
-$notes = [];  // Assuming $notes is initially an empty array or has existing values
+$action = null;
 
-// You could add a loop to add multiple notes
-$numberOfNotes = (int)readline("Combien de notes voulez-vous ajouter ? ");
-
-for ($i = 0; $i < $numberOfNotes; $i++) {
-    // Ask for a note input for each iteration
-    $addNote = (int)readline("Ajouter une note : ");
-    $notes[] = $addNote;  // Add the new note to the array
+while($action !== "fin"){
+    $action = readline("Veuillez entrez une note : ");
+    if($action !== "fin"){
+        $notes[] = (int)$action;
+    }
 }
 
-print_r($notes);  // Print all the added notes
+foreach($notes as $note){
+    echo "- $note " ;
+}
+
+// $notes = [];  // Assuming $notes is initially an empty array or has existing values
+
+// // You could add a loop to add multiple notes
+// $numberOfNotes = (int)readline("Combien de notes voulez-vous ajouter ? ");
+
+// for ($i = 0; $i < $numberOfNotes; $i++) {
+//     // Ask for a note input for each iteration
+//     $addNote = (int)readline("Ajouter une note : ");
+//     $notes[] = $addNote;  // Add the new note to the array
+// }
+
+// print_r($notes);  // Print all the added notes
